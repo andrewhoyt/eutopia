@@ -59,7 +59,7 @@
   /* MASTERY SECTION */
   .mastery-section { background: var(--green-light); padding: 5rem 2.5rem; border-bottom: 1px solid var(--green-bright); }
   .mastery-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
-  .mastery-img-frame { border-radius: var(--rl); overflow: hidden; background: #fff; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: sticky; top: 120px; }
+  .mastery-img-frame { border-radius: var(--rl); overflow: hidden; background: #fff; padding: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); position: sticky; top: 120px; }
   .mastery-img-frame img { width: 100%; border-radius: calc(var(--rl) - 4px); display: block; }
   .mastery-text h2 { font-family: var(--serif); font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--green); }
   .mastery-step { margin-bottom: 2rem; padding-left: 1.5rem; border-left: 2px solid var(--green-bright); }
@@ -70,7 +70,7 @@
   .model-wrapper { padding: 5rem 2.5rem; border-bottom: 1px solid var(--rule); }
   .model-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
   .model-visual { border-radius: var(--rl); overflow: hidden; position: sticky; top: 120px; }
-  .model-visual img { width: 100%; border: 10px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+  .model-visual img { width: 100%; border: 10px solid #fff; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
   .sec-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; }
   .sec-label::before { content: ''; width: 1.75rem; height: 1px; background: var(--green-mid); display: block; }
   
@@ -86,13 +86,28 @@
   .pill.cte { background: var(--blue-light); border-color: #b5d4f4; color: var(--blue); }
   .pill.railway { background: var(--amber-light); border-color: #FAC775; color: var(--amber); font-weight: 600; }
 
-  /* PARTNERSHIPS */
+  /* FIXED PARTNERSHIPS IMAGE FIX */
   .partners-section { background: var(--paper-warm); padding: 5rem 2.5rem; border-bottom: 1px solid var(--rule); }
   .partners-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: start; }
   .partner-track { background: #fff; padding: 2rem; border-radius: var(--rl); margin-bottom: 1.5rem; border: 1px solid var(--rule); }
   .partner-track h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--blue); margin-bottom: 1rem; border-bottom: 2px solid var(--blue-light); padding-bottom: 0.5rem; }
   .path-row { display: grid; grid-template-columns: 100px 1fr; gap: 1rem; margin-bottom: 0.75rem; font-size: 0.85rem; }
   .path-label { font-weight: 700; color: var(--ink-faint); text-transform: uppercase; font-size: 0.65rem; padding-top: 3px; }
+  
+  .partner-img { 
+    border-radius: var(--rl); 
+    overflow: hidden; 
+    position: sticky; 
+    top: 120px;
+    height: 600px; /* Constrains the massive image */
+  }
+  .partner-img img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Prevents stretching */
+    border: 10px solid #fff; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+  }
 
   /* SCHEDULE */
   .schedule-section { padding: 5rem 2.5rem; background: #fff; }
@@ -109,7 +124,7 @@
 
   @media (max-width: 992px) {
     .hero, .mastery-inner, .partners-inner, .schedule-inner, .shift-inner, .model-inner { grid-template-columns: 1fr; }
-    .hero-image-wrap, .model-visual, .schedule-img { height: 350px; order: -1; position: static; }
+    .hero-image-wrap, .model-visual, .schedule-img, .partner-img { height: 350px; order: -1; position: static; }
   }
 </style>
 </head>
