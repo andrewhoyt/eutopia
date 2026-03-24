@@ -31,12 +31,11 @@
   .nav-logo .isd { font-family: var(--sans); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-mid); }
   .nav-links { display: flex; align-items: center; gap: 1.75rem; }
   .nav-links a { font-size: 0.83rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--ink); }
   .nav-cta { background: var(--green); color: #fff !important; padding: 0.5rem 1.1rem; border-radius: var(--r); font-size: 0.83rem; font-weight: 500; text-decoration: none; }
   
   /* HERO */
   .hero-container { border-bottom: 1px solid var(--rule); }
-  .hero { display: grid; grid-template-columns: 1.2fr 1fr; min-height: 80vh; align-items: center; }
+  .hero { display: grid; grid-template-columns: 1.2fr 1fr; min-height: 70vh; align-items: center; }
   .hero-content { padding: 4rem 10% 4rem 5%; }
   .hero-image-wrap { height: 100%; position: relative; overflow: hidden; background: var(--paper-warm); }
   .hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
@@ -44,8 +43,6 @@
   .hero h1 { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 4.2rem); line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
   .hero h1 em { font-style: italic; color: var(--green); }
   .hero-sub { font-size: 1.1rem; color: var(--ink-muted); line-height: 1.7; max-width: 520px; margin-bottom: 2.5rem; }
-  .btn-p { background: var(--green); color: #fff; padding: 0.9rem 2rem; border-radius: var(--r); font-size: 0.9rem; font-weight: 500; text-decoration: none; display: inline-block; }
-  .btn-s { background: transparent; color: var(--ink); padding: 0.9rem 2rem; border: 1px solid var(--rule-mid); border-radius: var(--r); font-size: 0.9rem; font-weight: 500; text-decoration: none; display: inline-block; margin-left: 0.5rem; }
 
   /* SHIFT SECTION */
   .shift-grammar { background: var(--green); color: #fff; padding: 4rem 2.5rem; }
@@ -56,51 +53,51 @@
   .shift-old { font-size: 0.75rem; opacity: 0.6; text-decoration: line-through; display: block; margin-bottom: 0.25rem; }
   .shift-new { font-size: 0.9rem; font-weight: 500; display: block; }
 
-  /* METAPHOR */
-  .metaphor-band { background: var(--green-light); padding: 5rem 2.5rem; border-bottom: 1px solid var(--green-bright); }
-  .metaphor-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .metaphor-img-frame { border-radius: var(--rl); overflow: hidden; background: #fff; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-  .metaphor-img-frame img { width: 100%; border-radius: calc(var(--rl) - 4px); display: block; }
-  .metaphor-text h2 { font-family: var(--serif); font-size: 2.2rem; margin-bottom: 1rem; }
-
-  /* MODEL - FULL DETAILS */
-  .model { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-  .sec-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; }
-  .sec-label::before { content: ''; width: 1.75rem; height: 1px; background: var(--green-mid); display: block; }
+  /* METAPHOR / MASTERY SECTION */
+  .mastery-section { background: var(--green-light); padding: 5rem 2.5rem; border-bottom: 1px solid var(--green-bright); }
+  .mastery-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
+  .mastery-img-frame { border-radius: var(--rl); overflow: hidden; background: #fff; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: sticky; top: 120px; }
+  .mastery-img-frame img { width: 100%; border-radius: calc(var(--rl) - 4px); display: block; }
   
+  .mastery-text h2 { font-family: var(--serif); font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--green); }
+  .mastery-intro { font-size: 1.1rem; margin-bottom: 2rem; color: var(--ink-muted); }
+  .mastery-step { margin-bottom: 2rem; padding-left: 1.5rem; border-left: 2px solid var(--green-bright); }
+  .mastery-step h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--green-mid); text-transform: uppercase; letter-spacing: 0.05em; }
+  .mastery-step p { font-size: 0.95rem; color: var(--ink-muted); }
+
+  /* SCHEDULE SECTION */
+  .schedule-section { padding: 5rem 2.5rem; background: #fff; }
+  .schedule-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+  .schedule-img { border-radius: var(--rl); overflow: hidden; }
+  .schedule-img img { width: 100%; object-fit: cover; aspect-ratio: 16/10; }
+  
+  .schedule-content h2 { font-family: var(--serif); font-size: 2rem; margin-bottom: 1rem; }
+  .schedule-content p { color: var(--ink-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+  /* TABLE STYLES */
+  .table-container { width: 100%; overflow-x: auto; margin: 2rem 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left; background: var(--paper-warm); border-radius: var(--r); overflow: hidden; }
+  th { background: var(--green); color: #fff; padding: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7rem; }
+  td { padding: 1rem; border-bottom: 1px solid var(--rule); }
+  tr:last-child td { border-bottom: none; }
+  .highlight-td { background: rgba(29, 78, 58, 0.05); font-weight: 500; }
+  .off-day { color: var(--amber); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+
+  /* MODEL SECTION */
+  .model { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
   .band { border-radius: var(--rl); overflow: hidden; border: 1px solid var(--rule); margin-bottom: 2rem; }
   .band-head { padding: 1.2rem 1.5rem; display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--rule); }
-  .band-head h3 { font-size: 1.1rem; font-weight: 600; }
-  .band-head span { font-size: 0.8rem; opacity: 0.7; }
-  .band-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
-  
-  .band.k5 .band-head { background: #eaf3de; color: #27500A; }
-  .band.ms .band-head { background: #e1f5ee; color: #085041; }
-  .band.hs .band-head { background: var(--blue-light); color: var(--blue); }
-
-  .row-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
-  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .pill { background: var(--paper-card); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 6px 12px; font-size: 0.8rem; color: var(--ink); }
-  .pill.hub-pill { background: var(--green-light); border-color: var(--green-bright); color: var(--green); font-weight: 500; }
-  .pill.cte { background: var(--blue-light); border-color: #b5d4f4; color: var(--blue); }
-
-  /* GALLERY & HUB */
-  .hub-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding: 2.5rem; background: var(--paper-warm); }
-  .hub-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r); }
-  .hub-strip { background: var(--amber-light); border-top: 1px solid #FAC775; padding: 4rem 2.5rem; }
-  .hub-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
-  .btn-amber { background: var(--amber); color: #fff; padding: 1rem 2rem; border-radius: var(--r); font-size: 0.9rem; font-weight: 500; text-decoration: none; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; padding: 1.5rem; }
+  .pill { background: var(--paper-card); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 6px 12px; font-size: 0.8rem; }
 
   footer { padding: 3rem 2.5rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
 
   @media (max-width: 992px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-image-wrap { height: 400px; order: -1; }
-    .shift-inner { grid-template-columns: 1fr; }
-    .shift-grid { grid-template-columns: 1fr; }
-    .metaphor-inner { grid-template-columns: 1fr; }
-    .hub-gallery { grid-template-columns: 1fr 1fr; }
-    .hub-inner { flex-direction: column; text-align: center; }
+    .hero, .mastery-inner, .schedule-inner, .shift-inner { grid-template-columns: 1fr; }
+    .hero-image-wrap { height: 350px; order: -1; }
+    .mastery-img-frame { position: static; margin-bottom: 2rem; }
+    .schedule-inner { gap: 2rem; }
+    .schedule-img { order: -1; }
   }
 </style>
 </head>
@@ -110,8 +107,9 @@
   <a class="nav-logo" href="index.html">Eutopia <span class="isd">ISD</span></a>
   <div class="nav-links">
     <a href="#model">Our Model</a>
-    <a href="#hub">The Hub</a>
-    <a href="#explore" class="nav-cta">Get Involved</a>
+    <a href="#mastery">Mastery</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#hub" class="nav-cta">Get Involved</a>
   </div>
 </nav>
 
@@ -121,10 +119,6 @@
       <p class="eyebrow">Eutopia &nbsp;·&nbsp; A New Grammar for Schooling</p>
       <h1>Education built around who students <em>actually are.</em></h1>
       <p class="hero-sub">Dismantling the industrial model to build a mastery-based, community-rooted ecosystem where every learner is deeply known and trusted to grow.</p>
-      <div class="hero-actions">
-        <a class="btn-p" href="#model">Explore Our Model</a>
-        <a class="btn-s" href="game.html">Meet Joy Lerner →</a>
-      </div>
     </div>
     <div class="hero-image-wrap">
       <img src="student-collaboration.jpg" alt="Students working together">
@@ -134,84 +128,87 @@
 
 <section class="shift-grammar">
   <div class="shift-inner">
-    <div class="shift-title">
-      <p style="text-transform:uppercase; font-size:0.7rem; letter-spacing:0.2em; margin-bottom:1rem; color: var(--green-bright);">The Shift</p>
-      <h2>A New Grammar for Schooling</h2>
-    </div>
+    <div class="shift-title"><h2>A New Grammar for Schooling</h2></div>
     <div class="shift-grid">
       <div class="shift-item"><span class="shift-old">Age-graded batches</span><span class="shift-new">High-agency apprentices</span></div>
-      <div class="shift-item"><span class="shift-old">Siloed 50-minute blocks</span><span class="shift-new">Mastery-based, immersive dives</span></div>
+      <div class="shift-item"><span class="shift-old">Siloed blocks</span><span class="shift-new">Mastery-based immersive dives</span></div>
       <div class="shift-item"><span class="shift-old">Sorting and ranking</span><span class="shift-new">Stewardship and collaboration</span></div>
       <div class="shift-item"><span class="shift-old">One building, one campus</span><span class="shift-new">The community as the classroom</span></div>
     </div>
   </div>
 </section>
 
-<div class="metaphor-band">
-  <div class="metaphor-inner">
-    <div class="metaphor-img-frame"><img src="mountain-metaphor.jpg" alt="The Journey"></div>
-    <div class="metaphor-text">
-      <h2>The hub, the spokes, and the mountain.</h2>
-      <p>At Eutopia ISD, the Hub is where every student and educator returns: to connect, reflect, and prepare for the next ascent. The interest cohorts are the spokes — distinct paths, one shared center.</p>
+<section class="mastery-section" id="mastery">
+  <div class="mastery-inner">
+    <div class="mastery-img-frame">
+      <img src="mountain-metaphor.jpg" alt="Mountaintop Journey">
     </div>
-  </div>
-</div>
+    <div class="mastery-text">
+      <h2>Mastery of Progress: Cornerstones & Capstones</h2>
+      <p class="mastery-intro">To replace the traditional "seat-time" model, progression through Eutopia acts like a bicycle riding up a mountain—driven by academic core and co-curriculars, grounded in durable skills.</p>
+      
+      <div class="mastery-step">
+        <h4>Time-Variable Progression</h4>
+        <p>Advancement is untethered from age. Students move forward purely by demonstrating competency in Project-Based Learning (PBL) stacks aligned with their Interest Cohorts.</p>
+      </div>
 
-<section class="model" id="model">
-  <p class="sec-label">The model — K through 12</p>
-  
-  <div class="band k5">
-    <div class="band-head"><h3>Elementary — K–5</h3><span>Discovery & Foundations</span></div>
-    <div class="band-body">
-      <div class="row-label">Focus areas</div>
-      <div class="pills">
-        <div class="pill">Core literacy & numeracy</div><div class="pill">Interest discovery</div><div class="pill">Productive struggle</div><div class="pill">Community as classroom</div><div class="pill">Portfolio begins</div><div class="pill">Flexible scheduling</div>
+      <div class="mastery-step">
+        <h4>Annual Cornerstone Projects</h4>
+        <p>PreK–11 students complete a major project each year that serves as tangible proof of academic and durable skill mastery for their Mastery Transcript.</p>
       </div>
-    </div>
-  </div>
 
-  <div class="band ms">
-    <div class="band-head"><h3>Middle School — 6–8</h3><span>Interest cohorts activate</span></div>
-    <div class="band-body">
-      <div class="row-label">Interest cohorts</div>
-      <div class="pills">
-        <div class="pill">Technology</div><div class="pill">Basketball</div><div class="pill">Soccer</div><div class="pill">The Arts</div><div class="pill">Classical Liberal Arts</div><div class="pill">Health & Medicine</div><div class="pill">Agriculture</div><div class="pill">Engineering</div>
+      <div class="mastery-step">
+        <h4>The Senior Capstone</h4>
+        <p>12th graders synthesize their journey through a final apprenticeship or defense of mastery with local Lake Worth partners like BNSF, Union Pacific, or Luminant.</p>
       </div>
-      <div class="row-label">Daily Hub — Midday Gathering</div>
-      <div class="pills">
-        <div class="pill hub-pill">Durable skills</div><div class="pill hub-pill">Cross-cohort mentorship</div><div class="pill hub-pill">Mastery Transcript</div><div class="pill hub-pill">Portrait of a Learner</div>
-      </div>
-    </div>
-  </div>
 
-  <div class="band hs">
-    <div class="band-head"><h3>High School — 9–12</h3><span>CTE & Apprenticeship</span></div>
-    <div class="band-body">
-      <div class="row-label">CTE pathways (Dual Credit)</div>
-      <div class="pills">
-        <div class="pill cte">Information Technology</div><div class="pill cte">Exercise Science</div><div class="pill cte">Arts & Media</div><div class="pill cte">Health & Medicine</div><div class="pill cte">Agriculture</div><div class="pill cte">Advanced Manufacturing</div>
-      </div>
-      <div class="row-label">Work-based learning</div>
-      <div class="pills">
-        <div class="pill">Grades 9–10: Pre-apprenticeship</div><div class="pill">Grades 11–12: Apprenticeship</div><div class="pill">Community partnerships</div><div class="pill">Career & College Pathways</div>
+      <div class="mastery-step">
+        <h4>Community Showcases</h4>
+        <p>Once a month, learning is made public. Students present work to the community, ensuring accountability is rooted in authentic outcomes rather than tests.</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="hub-gallery">
-  <img src="hub-1.jpg" alt="Health"><img src="hub-2.jpg" alt="Coffee"><img src="hub-3.jpg" alt="Manufacturing"><img src="hub-4.jpg" alt="Agriculture">
-</div>
+<section class="model" id="model">
+  <p class="sec-label">The model — K through 12</p>
+  <div class="band k5"><div class="band-head"><h3>Elementary — K–5</h3><span>Discovery</span></div><div class="pills"><div class="pill">Literacy</div><div class="pill">Interest discovery</div><div class="pill">Community Classroom</div></div></div>
+  <div class="band ms"><div class="band-head"><h3>Middle School — 6–8</h3><span>Interest Cohorts</span></div><div class="pills"><div class="pill">Technology</div><div class="pill">The Arts</div><div class="pill">Health & Medicine</div><div class="pill">Engineering</div></div></div>
+  <div class="band hs"><div class="band-head"><h3>High School — 9–12</h3><span>Apprenticeship</span></div><div class="pills"><div class="pill">CTE Pathways</div><div class="pill">Pre-apprenticeship</div><div class="pill">Dual Credit</div></div></div>
+</section>
 
-<div class="hub-strip" id="hub">
-  <div class="hub-inner">
-    <div>
-      <h3 style="font-family: var(--serif); font-size: 1.8rem; margin-bottom: 0.5rem;">The Hub — where Eutopia learns together.</h3>
-      <p>Our community enterprise center connects student work to real economic and civic life.</p>
+<section class="schedule-section" id="schedule">
+  <div class="schedule-inner">
+    <div class="schedule-content">
+      <h2>Flexible Adult Schedule: The New Grammar for Staff</h2>
+      <p>To foster "Authentic Practitioners," we dismantle burnout-inducing schedules. Staff utilize a 4-day work week to engage in deep planning and "Cycles of Inquiry."</p>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Student Experience</th>
+              <th>Staff A</th>
+              <th>Staff B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Monday</td><td class="highlight-td">Core PBL / Interest Cohorts</td><td>On Campus</td><td>On Campus</td></tr>
+            <tr><td>Tuesday</td><td class="highlight-td">Core PBL / Interest Cohorts</td><td>On Campus</td><td>On Campus</td></tr>
+            <tr><td>Wednesday</td><td class="highlight-td">Passion Projects / Hub Time</td><td class="off-day">Deep Planning</td><td>On Campus</td></tr>
+            <tr><td>Thursday</td><td class="highlight-td">Core PBL / Interest Cohorts</td><td>On Campus</td><td>On Campus</td></tr>
+            <tr><td>Friday</td><td class="highlight-td">Apprenticeships / CTE</td><td>On Campus</td><td class="off-day">Deep Planning</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-style: italic; font-size: 0.85rem;">*On Wednesdays and Fridays, students work with community mentors and alumni in the Hub while faculty individualize instruction.</p>
     </div>
-    <a class="btn-amber" href="#hub">Visit The Hub →</a>
+    <div class="schedule-img">
+      <img src="hub-4.jpg" alt="The Hub in Action">
+    </div>
   </div>
-</div>
+</section>
 
 <footer>
   <span class="logo" style="font-family: var(--serif); font-weight: bold;">Eutopia ISD</span>
