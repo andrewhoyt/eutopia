@@ -63,19 +63,27 @@
   .mastery-step h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--green-mid); text-transform: uppercase; letter-spacing: 0.05em; }
   .mastery-step p { font-size: 0.95rem; color: var(--ink-muted); }
 
+  /* PARTNERSHIPS SECTION */
+  .partners-section { background: var(--paper-warm); padding: 5rem 2.5rem; border-bottom: 1px solid var(--rule); }
+  .partners-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: start; }
+  .partner-track { background: #fff; padding: 2rem; border-radius: var(--rl); margin-bottom: 1.5rem; border: 1px solid var(--rule); }
+  .partner-track h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--blue); margin-bottom: 1rem; border-bottom: 2px solid var(--blue-light); padding-bottom: 0.5rem; }
+  .path-row { display: grid; grid-template-columns: 100px 1fr; gap: 1rem; margin-bottom: 0.75rem; font-size: 0.85rem; }
+  .path-label { font-weight: 700; color: var(--ink-faint); text-transform: uppercase; font-size: 0.65rem; padding-top: 3px; }
+  .partner-img { border-radius: var(--rl); overflow: hidden; position: sticky; top: 120px; }
+  .partner-img img { width: 100%; border: 10px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
   /* MODEL SECTION */
   .model { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
   .sec-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; }
   .sec-label::before { content: ''; width: 1.75rem; height: 1px; background: var(--green-mid); display: block; }
   .band { border-radius: var(--rl); overflow: hidden; border: 1px solid var(--rule); margin-bottom: 2rem; }
   .band-head { padding: 1.2rem 1.5rem; display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--rule); }
-  .band-head h3 { font-size: 1.1rem; font-weight: 600; }
-  .band-head span { font-size: 0.8rem; opacity: 0.7; }
-  .band-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
   .band.k5 .band-head { background: #eaf3de; color: #27500A; }
   .band.ms .band-head { background: #e1f5ee; color: #085041; }
   .band.hs .band-head { background: var(--blue-light); color: var(--blue); }
-  .row-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+  .band-body { padding: 1.5rem; }
+  .row-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; margin-top: 15px; }
   .pills { display: flex; flex-wrap: wrap; gap: 8px; }
   .pill { background: var(--paper-card); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 6px 12px; font-size: 0.8rem; color: var(--ink); }
   .pill.hub-pill { background: var(--green-light); border-color: var(--green-bright); color: var(--green); font-weight: 500; }
@@ -86,21 +94,15 @@
   .schedule-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
   .schedule-img { border-radius: var(--rl); overflow: hidden; }
   .schedule-img img { width: 100%; object-fit: cover; aspect-ratio: 16/10; }
-  .schedule-content h2 { font-family: var(--serif); font-size: 2rem; margin-bottom: 1rem; }
-  .table-container { width: 100%; overflow-x: auto; margin: 2rem 0; }
   table { width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left; background: var(--paper-warm); border-radius: var(--r); overflow: hidden; }
-  th { background: var(--green); color: #fff; padding: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7rem; }
+  th { background: var(--green); color: #fff; padding: 1rem; font-size: 0.7rem; }
   td { padding: 1rem; border-bottom: 1px solid var(--rule); }
-  .highlight-td { background: rgba(29, 78, 58, 0.05); font-weight: 500; }
-  .off-day { color: var(--amber); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
 
   footer { padding: 3rem 2.5rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
 
   @media (max-width: 992px) {
-    .hero, .mastery-inner, .schedule-inner, .shift-inner { grid-template-columns: 1fr; }
-    .hero-image-wrap { height: 350px; order: -1; }
-    .mastery-img-frame { position: static; margin-bottom: 2rem; }
-    .schedule-img { order: -1; }
+    .hero, .mastery-inner, .partners-inner, .schedule-inner, .shift-inner { grid-template-columns: 1fr; }
+    .hero-image-wrap, .partner-img, .schedule-img { height: 350px; order: -1; position: static; }
   }
 </style>
 </head>
@@ -111,6 +113,7 @@
   <div class="nav-links">
     <a href="#model">Our Model</a>
     <a href="#mastery">Mastery</a>
+    <a href="#partners">Partners</a>
     <a href="#schedule">Schedule</a>
     <a href="#explore" class="nav-cta">Get Involved</a>
   </div>
@@ -123,9 +126,7 @@
       <h1>Education built around who students <em>actually are.</em></h1>
       <p class="hero-sub">Dismantling the industrial model to build a mastery-based, community-rooted ecosystem where every learner is deeply known and trusted to grow.</p>
     </div>
-    <div class="hero-image-wrap">
-      <img src="student-collaboration.jpg" alt="Students working together">
-    </div>
+    <div class="hero-image-wrap"><img src="student-collaboration.jpg" alt="Students"></div>
   </div>
 </section>
 
@@ -143,9 +144,7 @@
 
 <section class="mastery-section" id="mastery">
   <div class="mastery-inner">
-    <div class="mastery-img-frame">
-      <img src="mountain-metaphor.jpg" alt="Mountaintop Journey">
-    </div>
+    <div class="mastery-img-frame"><img src="mountain-metaphor.jpg" alt="Mastery Journey"></div>
     <div class="mastery-text">
       <h2>Mastery of Progress: Cornerstones & Capstones</h2>
       <div class="mastery-step">
@@ -158,19 +157,46 @@
       </div>
       <div class="mastery-step">
         <h4>The Senior Capstone</h4>
-        <p>12th graders synthesize their entire journey through a final apprenticeship or defense of mastery with local partners like BNSF, Union Pacific, or Luminant.</p>
-      </div>
-      <div class="mastery-step">
-        <h4>Community Showcases</h4>
-        <p>Once a month, learning is made public. Students present projects to the community, shifting accountability to authentic outcomes.</p>
+        <p>12th graders synthesize their journey through a final apprenticeship with partners like BNSF, Union Pacific, or Luminant.</p>
       </div>
     </div>
   </div>
 </section>
 
+<section class="partners-section" id="partners">
+  <div class="partners-inner">
+    <div class="partners-list">
+      <p class="sec-label" style="color:var(--blue);">The Railroad & Energy Pipeline</p>
+      <h2 style="font-family: var(--serif); font-size: 2.2rem; margin-bottom: 1.5rem;">$50k to Six Figures</h2>
+      <p style="margin-bottom: 2rem; color: var(--ink-muted);">Lake Worth is uniquely positioned near major rail and energy hubs. We "pull" these careers into early grades to change the narrative on trade-based success.</p>
+
+      <div class="partner-track">
+        <h3>BNSF / Union Pacific</h3>
+        <div class="path-row"><div class="path-label">Elementary</div><div>Physics of Motion: Junior Conductor kits; field trips to Davidson Yard.</div></div>
+        <div class="path-row"><div class="path-label">Middle</div><div>Logistics Tech: Simulation software for train dispatching and freight routing.</div></div>
+        <div class="path-row"><div class="path-label">High School</div><div>Railroad Operations: Dual credit tracks in Locomotive Mech or Signal Systems.</div></div>
+      </div>
+
+      <div class="partner-track">
+        <h3>Luminant / Vistra Corp</h3>
+        <div class="path-row"><div class="path-label">Elementary</div><div>Energy Hunters: Interactive kits on how electricity reaches homes.</div></div>
+        <div class="path-row"><div class="path-label">Middle</div><div>Grid Guardians: Coding and hardware for managing local power grids.</div></div>
+        <div class="path-row"><div class="path-label">High School</div><div>Power Plant Tech: Direct certification in Electrical or Instrumentation.</div></div>
+      </div>
+
+      <div class="partner-track">
+        <h3>Encore</h3>
+        <div class="path-row"><div class="path-label">Elementary</div><div>Business Basics: Student-run "mini-ventures" supported by Encore staff.</div></div>
+        <div class="path-row"><div class="path-label">Middle</div><div>Real Estate/Capital: Lessons in property value and investments.</div></div>
+        <div class="path-row"><div class="path-label">High School</div><div>Business Finance: Internships in portfolio management or construction.</div></div>
+      </div>
+    </div>
+    <div class="partner-img"><img src="hub-2.jpg" alt="Energy and Rail Partnerships"></div>
+  </div>
+</section>
+
 <section class="model" id="model">
   <p class="sec-label">The model — K through 12</p>
-  
   <div class="band k5">
     <div class="band-head"><h3>Elementary — K–5</h3><span>Discovery & Foundations</span></div>
     <div class="band-body">
@@ -194,7 +220,7 @@
       </div>
       <div class="row-label">Daily Hub — midday gathering</div>
       <div class="pills">
-        <div class="pill hub-pill">Durable skills discussion</div><div class="pill hub-pill">Cross-cohort mentorship</div><div class="pill hub-pill">Mastery Transcript submissions</div><div class="pill hub-pill">Portrait of a Learner</div>
+        <div class="pill hub-pill">Durable skills</div><div class="pill hub-pill">Mentorship</div><div class="pill hub-pill">Mastery Transcript</div><div class="pill hub-pill">Portrait of a Learner</div>
       </div>
     </div>
   </div>
@@ -218,25 +244,23 @@
   <div class="schedule-inner">
     <div class="schedule-content">
       <h2>Flexible Adult Schedule</h2>
-      <div class="table-container">
-        <table>
-          <thead><tr><th>Day</th><th>Student Experience</th><th>Staff A</th><th>Staff B</th></tr></thead>
-          <tbody>
-            <tr><td>Monday</td><td class="highlight-td">Core PBL / Interest Cohorts</td><td>On Campus</td><td>On Campus</td></tr>
-            <tr><td>Tuesday</td><td class="highlight-td">Core PBL / Interest Cohorts</td><td>On Campus</td><td>On Campus</td></tr>
-            <tr><td>Wednesday</td><td class="highlight-td">Passion Projects / Hub Time</td><td class="off-day">Deep Planning</td><td>On Campus</td></tr>
-            <tr><td>Thursday</td><td class="highlight-td">Core PBL / Interest Cohorts</td><td>On Campus</td><td>On Campus</td></tr>
-            <tr><td>Friday</td><td class="highlight-td">Apprenticeships / CTE</td><td>On Campus</td><td class="off-day">Deep Planning</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <table>
+        <thead><tr><th>Day</th><th>Student Experience</th><th>Staff A</th><th>Staff B</th></tr></thead>
+        <tbody>
+          <tr><td>Monday</td><td>Core PBL</td><td>On Campus</td><td>On Campus</td></tr>
+          <tr><td>Tuesday</td><td>Core PBL</td><td>On Campus</td><td>On Campus</td></tr>
+          <tr><td>Wednesday</td><td>Hub Time</td><td style="color:var(--amber);">Planning</td><td>On Campus</td></tr>
+          <tr><td>Thursday</td><td>Core PBL</td><td>On Campus</td><td>On Campus</td></tr>
+          <tr><td>Friday</td><td>Apprenticeships</td><td>On Campus</td><td style="color:var(--amber);">Planning</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="schedule-img"><img src="hub-4.jpg" alt="Hub Life"></div>
+    <div class="schedule-img"><img src="hub-4.jpg" alt="Hub Schedule"></div>
   </div>
 </section>
 
 <footer>
-  <span class="logo" style="font-family: var(--serif); font-weight: bold;">Eutopia ISD</span>
+  <span class="logo">Eutopia ISD</span>
   <p>© 2026 Eutopia · A New Grammar for Schooling</p>
 </footer>
 
