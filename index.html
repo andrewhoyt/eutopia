@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eutopia ISD — A New Grammar for Schooling</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a18; --ink-muted: #5a5a54; --ink-faint: #9a9a90;
+    --paper: #f5f2eb; --paper-warm: #ede9df; --paper-card: #ffffff;
+    --green: #1d4e3a; --green-mid: #2d7a5a; --green-light: #e1f0e8; --green-bright: #c8e6d4;
+    --blue: #0C447C; --blue-light: #e6f1fb;
+    --amber: #854F0B; --amber-light: #FAEEDA;
+    --rule: rgba(26,26,24,0.1); --rule-mid: rgba(26,26,24,0.2);
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --r: 4px; --rl: 10px;
+  }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 2.5rem; border-bottom: 1px solid var(--rule);
+    background: var(--paper); position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); text-decoration: none; display: flex; align-items: baseline; gap: 0.4rem; }
+  .nav-logo .isd { font-family: var(--sans); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-mid); }
+  .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+  .nav-links a { font-size: 0.83rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta { background: var(--green); color: #fff !important; padding: 0.5rem 1.1rem; border-radius: var(--r); font-size: 0.83rem; font-weight: 500; text-decoration: none; transition: background 0.2s; }
+  
+  /* HERO REDESIGN */
+  .hero-container { border-bottom: 1px solid var(--rule); }
+  .hero { 
+    display: grid; 
+    grid-template-columns: 1.2fr 1fr; 
+    min-height: 85vh;
+    align-items: center;
+  }
+  .hero-content { padding: 4rem 5%; }
+  .hero-image-wrap { 
+    height: 100%; 
+    background: var(--paper-warm);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(20%) contrast(95%);
+  }
+  .eyebrow { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 4.2rem); line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+  .hero h1 em { font-style: italic; color: var(--green); }
+  .hero-sub { font-size: 1.1rem; color: var(--ink-muted); line-height: 1.7; max-width: 520px; margin-bottom: 2.5rem; }
+  
+  /* OVERLAY CARD */
+  .floating-grammar {
+    position: absolute;
+    bottom: 40px;
+    left: -60px;
+    background: var(--green);
+    color: #fff;
+    padding: 2rem;
+    border-radius: var(--rl);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    width: 340px;
+    z-index: 10;
+  }
+
+  /* METAPHOR SECTION */
+  .metaphor-band { background: var(--green-light); padding: 5rem 2.5rem; }
+  .metaphor-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .metaphor-img-frame {
+    border-radius: var(--rl);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    background: #fff;
+    padding: 10px;
+  }
+  .metaphor-img-frame img { width: 100%; border-radius: calc(var(--rl) - 4px); display: block; }
+
+  /* HUB GALLERY */
+  .hub-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1rem 2.5rem;
+    background: var(--paper-warm);
+  }
+  .hub-gallery img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--r);
+    transition: transform 0.3s ease;
+  }
+  .hub-gallery img:hover { transform: scale(1.02); }
+
+  /* ORIGINAL STYLES PRESERVED */
+  .btn-p { background: var(--green); color: #fff; padding: 0.9rem 2rem; border-radius: var(--r); font-size: 0.9rem; font-weight: 500; text-decoration: none; display: inline-block; transition: all 0.2s; }
+  .btn-s { background: transparent; color: var(--ink); padding: 0.9rem 2rem; border: 1px solid var(--rule-mid); border-radius: var(--r); font-size: 0.9rem; font-weight: 500; text-decoration: none; display: inline-block; }
+  .gc-row { padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.75rem; }
+  
+  /* ... (rest of your existing styles for Model, Symmetry, and Footer) ... */
+  .model { padding: 4rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+  .sec-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; }
+  .sec-label::before { content: ''; width: 1.75rem; height: 1px; background: var(--green-mid); display: block; }
+  .bands { display: flex; flex-direction: column; gap: 1rem; }
+  .band { border-radius: var(--rl); overflow: hidden; border: 1px solid var(--rule); }
+  .band-head { padding: 0.9rem 1.25rem; display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--rule); }
+  .band-head h3 { font-size: 0.95rem; font-weight: 500; margin: 0; }
+  .band-head span { font-size: 0.78rem; color: var(--ink-faint); }
+  .band-body { padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .band.k5 .band-head { background: #eaf3de; } .band.k5 .band-head h3 { color: #27500A; }
+  .band.ms .band-head { background: #e1f5ee; } .band.ms .band-head h3 { color: #085041; }
+  .band.hs .band-head { background: var(--blue-light); } .band.hs .band-head h3 { color: var(--blue); }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill { background: var(--paper-card); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 4px 10px; font-size: 0.75rem; color: var(--ink); }
+  .pill.hub-pill { background: var(--green-light); border-color: var(--green-bright); color: var(--green); font-weight: 500; }
+  .row-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 4px; }
+  
+  .symmetry { background: var(--ink); color: var(--paper); padding: 4rem 2.5rem; }
+  .sym-inner { max-width: 1100px; margin: 0 auto; }
+  .sym-grid { display: grid; grid-template-columns: 160px 1fr 1fr; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--rl); overflow: hidden; }
+  .sym-cell { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 0.83rem; line-height: 1.6; }
+  .sym-col-head { padding: 0.75rem 1rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  
+  .hub-strip { background: var(--amber-light); border-top: 1px solid #FAC775; border-bottom: 1px solid #FAC775; padding: 2rem 2.5rem; }
+  .hub-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+  .btn-amber { background: var(--amber); color: #fff; padding: 0.7rem 1.5rem; border-radius: var(--r); font-size: 0.88rem; font-weight: 500; text-decoration: none; display: inline-block; }
+
+  footer { padding: 2.5rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+
+  @media (max-width: 992px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-image-wrap { height: 400px; }
+    .floating-grammar { position: relative; left: 0; bottom: 0; width: 100%; border-radius: 0; }
+    .metaphor-inner { grid-template-columns: 1fr; text-align: center; }
+    .hub-gallery { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Eutopia <span class="isd">ISD</span></a>
+  <div class="nav-links">
+    <a href="#model">Our Model</a>
+    <a href="#symmetry">Symmetry</a>
+    <a href="#hub">The Hub</a>
+    <a href="#explore" class="nav-cta">Get Involved</a>
+  </div>
+</nav>
+
+<section class="hero-container">
+  <div class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Eutopia &nbsp;·&nbsp; A New Grammar for Schooling</p>
+      <h1>Education built around who students <em>actually are.</em></h1>
+      <p class="hero-sub">Dismantling the industrial model to build a mastery-based, community-rooted ecosystem where every learner is deeply known and trusted to grow.</p>
+      <div class="hero-actions">
+        <a class="btn-p" href="#model">Explore Our Model</a>
+        <a class="btn-s" href="game.html">Meet Joy Lerner →</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <img src="student-collaboration.jpg" alt="Students working together in a modern learning environment">
+      
+      <div class="floating-grammar">
+        <p style="text-transform:uppercase; font-size:0.6rem; letter-spacing:0.1em; opacity:0.7; margin-bottom:1rem;">The Shift</p>
+        <div class="gc-row"><div style="opacity:0.5;">Old: Age-graded</div><div>New: High-agency</div></div>
+        <div class="gc-row"><div style="opacity:0.5;">Old: Siloed blocks</div><div>New: Immersive</div></div>
+        <div class="gc-row" style="border:none;"><div style="opacity:0.5;">Old: Sorting/Ranking</div><div>New: Stewardship</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="metaphor-band">
+  <div class="metaphor-inner">
+    <div class="metaphor-img-frame">
+      <img src="mountain-metaphor.jpg" alt="A student looking toward a mountain path">
+    </div>
+    <div class="metaphor-text">
+      <h2>The hub, the spokes, and the mountain.</h2>
+      <p>At Eutopia ISD, the Hub is where every student and educator returns: to connect, reflect, and prepare for the next ascent. The interest cohorts are the spokes — distinct paths, one shared center. The mountain is always in front of you. That's the point.</p>
+    </div>
+  </div>
+</div>
+
+<section class="model" id="model">
+  <p class="sec-label">The model — K through 12</p>
+  <div class="bands">
+    <div class="band k5">
+      <div class="band-head"><h3>Elementary — K–5</h3><span>Discovery &amp; Foundations</span></div>
+      <div class="band-body">
+          <div class="pills">
+            <div class="pill">Core literacy</div><div class="pill">Interest discovery</div><div class="pill">Community as classroom</div>
+          </div>
+      </div>
+    </div>
+    <div class="band ms">
+      <div class="band-head"><h3>Middle School — 6–8</h3><span>Interest cohorts activate</span></div>
+      <div class="band-body">
+          <div class="pills">
+            <div class="pill">Technology</div><div class="pill">Basketball</div><div class="pill">The Arts</div><div class="pill">Engineering</div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hub-gallery">
+  <img src="hub-1.jpg" alt="Student in health clinic">
+  <img src="hub-2.jpg" alt="Coffee shop enterprise">
+  <img src="hub-3.jpg" alt="Manufacturing studio">
+  <img src="hub-4.jpg" alt="Agriculture garden">
+</div>
+
+<div class="hub-strip" id="hub">
+  <div class="hub-inner">
+    <div>
+      <h3>The Hub — where Eutopia learns together.</h3>
+      <p>Our community enterprise center connects student work to real economic and civic life.</p>
+    </div>
+    <a class="btn-amber" href="#hub">Visit The Hub →</a>
+  </div>
+</div>
+
+<footer>
+  <span class="logo">Eutopia ISD</span>
+  <p>© 2026 Eutopia · A New Grammar for Schooling</p>
+</footer>
+
+</body>
+</html>
