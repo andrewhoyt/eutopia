@@ -53,42 +53,46 @@
   .shift-old { font-size: 0.75rem; opacity: 0.6; text-decoration: line-through; display: block; margin-bottom: 0.25rem; }
   .shift-new { font-size: 0.9rem; font-weight: 500; display: block; }
 
-  /* METAPHOR / MASTERY SECTION */
+  /* MASTERY SECTION */
   .mastery-section { background: var(--green-light); padding: 5rem 2.5rem; border-bottom: 1px solid var(--green-bright); }
   .mastery-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
   .mastery-img-frame { border-radius: var(--rl); overflow: hidden; background: #fff; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: sticky; top: 120px; }
   .mastery-img-frame img { width: 100%; border-radius: calc(var(--rl) - 4px); display: block; }
-  
   .mastery-text h2 { font-family: var(--serif); font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--green); }
-  .mastery-intro { font-size: 1.1rem; margin-bottom: 2rem; color: var(--ink-muted); }
   .mastery-step { margin-bottom: 2rem; padding-left: 1.5rem; border-left: 2px solid var(--green-bright); }
   .mastery-step h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--green-mid); text-transform: uppercase; letter-spacing: 0.05em; }
   .mastery-step p { font-size: 0.95rem; color: var(--ink-muted); }
+
+  /* MODEL SECTION */
+  .model { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+  .sec-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; }
+  .sec-label::before { content: ''; width: 1.75rem; height: 1px; background: var(--green-mid); display: block; }
+  .band { border-radius: var(--rl); overflow: hidden; border: 1px solid var(--rule); margin-bottom: 2rem; }
+  .band-head { padding: 1.2rem 1.5rem; display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--rule); }
+  .band-head h3 { font-size: 1.1rem; font-weight: 600; }
+  .band-head span { font-size: 0.8rem; opacity: 0.7; }
+  .band-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .band.k5 .band-head { background: #eaf3de; color: #27500A; }
+  .band.ms .band-head { background: #e1f5ee; color: #085041; }
+  .band.hs .band-head { background: var(--blue-light); color: var(--blue); }
+  .row-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { background: var(--paper-card); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 6px 12px; font-size: 0.8rem; color: var(--ink); }
+  .pill.hub-pill { background: var(--green-light); border-color: var(--green-bright); color: var(--green); font-weight: 500; }
+  .pill.cte { background: var(--blue-light); border-color: #b5d4f4; color: var(--blue); }
 
   /* SCHEDULE SECTION */
   .schedule-section { padding: 5rem 2.5rem; background: #fff; }
   .schedule-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
   .schedule-img { border-radius: var(--rl); overflow: hidden; }
   .schedule-img img { width: 100%; object-fit: cover; aspect-ratio: 16/10; }
-  
   .schedule-content h2 { font-family: var(--serif); font-size: 2rem; margin-bottom: 1rem; }
-  .schedule-content p { color: var(--ink-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
-
-  /* TABLE STYLES */
   .table-container { width: 100%; overflow-x: auto; margin: 2rem 0; }
   table { width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left; background: var(--paper-warm); border-radius: var(--r); overflow: hidden; }
   th { background: var(--green); color: #fff; padding: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7rem; }
   td { padding: 1rem; border-bottom: 1px solid var(--rule); }
-  tr:last-child td { border-bottom: none; }
   .highlight-td { background: rgba(29, 78, 58, 0.05); font-weight: 500; }
   .off-day { color: var(--amber); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
-
-  /* MODEL SECTION */
-  .model { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-  .band { border-radius: var(--rl); overflow: hidden; border: 1px solid var(--rule); margin-bottom: 2rem; }
-  .band-head { padding: 1.2rem 1.5rem; display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--rule); }
-  .pills { display: flex; flex-wrap: wrap; gap: 8px; padding: 1.5rem; }
-  .pill { background: var(--paper-card); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 6px 12px; font-size: 0.8rem; }
 
   footer { padding: 3rem 2.5rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
 
@@ -96,7 +100,6 @@
     .hero, .mastery-inner, .schedule-inner, .shift-inner { grid-template-columns: 1fr; }
     .hero-image-wrap { height: 350px; order: -1; }
     .mastery-img-frame { position: static; margin-bottom: 2rem; }
-    .schedule-inner { gap: 2rem; }
     .schedule-img { order: -1; }
   }
 </style>
@@ -109,7 +112,7 @@
     <a href="#model">Our Model</a>
     <a href="#mastery">Mastery</a>
     <a href="#schedule">Schedule</a>
-    <a href="#hub" class="nav-cta">Get Involved</a>
+    <a href="#explore" class="nav-cta">Get Involved</a>
   </div>
 </nav>
 
@@ -145,26 +148,21 @@
     </div>
     <div class="mastery-text">
       <h2>Mastery of Progress: Cornerstones & Capstones</h2>
-      <p class="mastery-intro">To replace the traditional "seat-time" model, progression through Eutopia acts like a bicycle riding up a mountain—driven by academic core and co-curriculars, grounded in durable skills.</p>
-      
       <div class="mastery-step">
         <h4>Time-Variable Progression</h4>
-        <p>Advancement is untethered from age. Students move forward purely by demonstrating competency in Project-Based Learning (PBL) stacks aligned with their Interest Cohorts.</p>
+        <p>Advancement is untethered from age. Students move forward purely by demonstrating competency in PBL stacks aligned with Interest Cohorts.</p>
       </div>
-
       <div class="mastery-step">
         <h4>Annual Cornerstone Projects</h4>
-        <p>PreK–11 students complete a major project each year that serves as tangible proof of academic and durable skill mastery for their Mastery Transcript.</p>
+        <p>PreK–11 students complete a major project each year that serves as tangible proof of academic mastery for their Mastery Transcript.</p>
       </div>
-
       <div class="mastery-step">
         <h4>The Senior Capstone</h4>
-        <p>12th graders synthesize their journey through a final apprenticeship or defense of mastery with local Lake Worth partners like BNSF, Union Pacific, or Luminant.</p>
+        <p>12th graders synthesize their entire journey through a final apprenticeship or defense of mastery with local partners like BNSF, Union Pacific, or Luminant.</p>
       </div>
-
       <div class="mastery-step">
         <h4>Community Showcases</h4>
-        <p>Once a month, learning is made public. Students present work to the community, ensuring accountability is rooted in authentic outcomes rather than tests.</p>
+        <p>Once a month, learning is made public. Students present projects to the community, shifting accountability to authentic outcomes.</p>
       </div>
     </div>
   </div>
@@ -172,27 +170,57 @@
 
 <section class="model" id="model">
   <p class="sec-label">The model — K through 12</p>
-  <div class="band k5"><div class="band-head"><h3>Elementary — K–5</h3><span>Discovery</span></div><div class="pills"><div class="pill">Literacy</div><div class="pill">Interest discovery</div><div class="pill">Community Classroom</div></div></div>
-  <div class="band ms"><div class="band-head"><h3>Middle School — 6–8</h3><span>Interest Cohorts</span></div><div class="pills"><div class="pill">Technology</div><div class="pill">The Arts</div><div class="pill">Health & Medicine</div><div class="pill">Engineering</div></div></div>
-  <div class="band hs"><div class="band-head"><h3>High School — 9–12</h3><span>Apprenticeship</span></div><div class="pills"><div class="pill">CTE Pathways</div><div class="pill">Pre-apprenticeship</div><div class="pill">Dual Credit</div></div></div>
+  
+  <div class="band k5">
+    <div class="band-head"><h3>Elementary — K–5</h3><span>Discovery & Foundations</span></div>
+    <div class="band-body">
+      <div class="row-label">Focus areas</div>
+      <div class="pills">
+        <div class="pill">Core literacy & numeracy</div><div class="pill">Interest discovery</div><div class="pill">Productive struggle</div><div class="pill">Community as classroom</div><div class="pill">Portfolio begins</div><div class="pill">Flexible scheduling</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band ms">
+    <div class="band-head"><h3>Middle School — 6–8</h3><span>Interest Cohorts & Mastery</span></div>
+    <div class="band-body">
+      <div class="row-label">Interest cohorts</div>
+      <div class="pills">
+        <div class="pill">Technology</div><div class="pill">Basketball</div><div class="pill">Soccer</div><div class="pill">The Arts</div><div class="pill">Classical Liberal Arts</div><div class="pill">Health & Medicine</div><div class="pill">Agriculture</div><div class="pill">Engineering</div>
+      </div>
+      <div class="row-label">Arts cohort — documentary strand</div>
+      <div class="pills">
+        <div class="pill">Longform storytelling</div><div class="pill">Video & media production</div><div class="pill">Student work interviews</div><div class="pill">Living school documentary</div>
+      </div>
+      <div class="row-label">Daily Hub — midday gathering</div>
+      <div class="pills">
+        <div class="pill hub-pill">Durable skills discussion</div><div class="pill hub-pill">Cross-cohort mentorship</div><div class="pill hub-pill">Mastery Transcript submissions</div><div class="pill hub-pill">Portrait of a Learner</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band hs">
+    <div class="band-head"><h3>High School — 9–12</h3><span>CTE & Apprenticeship</span></div>
+    <div class="band-body">
+      <div class="row-label">CTE pathways (dual credit)</div>
+      <div class="pills">
+        <div class="pill cte">Information Technology</div><div class="pill cte">Exercise Science</div><div class="pill cte">Arts & Media</div><div class="pill cte">Health & Medicine</div><div class="pill cte">Agriculture</div><div class="pill cte">Advanced Manufacturing</div>
+      </div>
+      <div class="row-label">Work-based learning progression</div>
+      <div class="pills">
+        <div class="pill">Grades 9–10: pre-apprenticeship</div><div class="pill">Grades 11–12: apprenticeship</div><div class="pill">Community & industry partnerships</div><div class="pill">Permeable pathways</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="schedule-section" id="schedule">
   <div class="schedule-inner">
     <div class="schedule-content">
-      <h2>Flexible Adult Schedule: The New Grammar for Staff</h2>
-      <p>To foster "Authentic Practitioners," we dismantle burnout-inducing schedules. Staff utilize a 4-day work week to engage in deep planning and "Cycles of Inquiry."</p>
-      
+      <h2>Flexible Adult Schedule</h2>
       <div class="table-container">
         <table>
-          <thead>
-            <tr>
-              <th>Day</th>
-              <th>Student Experience</th>
-              <th>Staff A</th>
-              <th>Staff B</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Day</th><th>Student Experience</th><th>Staff A</th><th>Staff B</th></tr></thead>
           <tbody>
             <tr><td>Monday</td><td class="highlight-td">Core PBL / Interest Cohorts</td><td>On Campus</td><td>On Campus</td></tr>
             <tr><td>Tuesday</td><td class="highlight-td">Core PBL / Interest Cohorts</td><td>On Campus</td><td>On Campus</td></tr>
@@ -202,11 +230,8 @@
           </tbody>
         </table>
       </div>
-      <p style="font-style: italic; font-size: 0.85rem;">*On Wednesdays and Fridays, students work with community mentors and alumni in the Hub while faculty individualize instruction.</p>
     </div>
-    <div class="schedule-img">
-      <img src="hub-4.jpg" alt="The Hub in Action">
-    </div>
+    <div class="schedule-img"><img src="hub-4.jpg" alt="Hub Life"></div>
   </div>
 </section>
 
