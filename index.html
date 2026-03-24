@@ -32,118 +32,75 @@
   .nav-links { display: flex; align-items: center; gap: 1.75rem; }
   .nav-links a { font-size: 0.83rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--ink); }
-  .nav-cta { background: var(--green); color: #fff !important; padding: 0.5rem 1.1rem; border-radius: var(--r); font-size: 0.83rem; font-weight: 500; text-decoration: none; transition: background 0.2s; }
+  .nav-cta { background: var(--green); color: #fff !important; padding: 0.5rem 1.1rem; border-radius: var(--r); font-size: 0.83rem; font-weight: 500; text-decoration: none; }
   
-  /* HERO REDESIGN */
+  /* HERO */
   .hero-container { border-bottom: 1px solid var(--rule); }
-  .hero { 
-    display: grid; 
-    grid-template-columns: 1.2fr 1fr; 
-    min-height: 85vh;
-    align-items: center;
-  }
-  .hero-content { padding: 4rem 5%; }
-  .hero-image-wrap { 
-    height: 100%; 
-    background: var(--paper-warm);
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: sepia(20%) contrast(95%);
-  }
+  .hero { display: grid; grid-template-columns: 1.2fr 1fr; min-height: 80vh; align-items: center; }
+  .hero-content { padding: 4rem 10% 4rem 5%; }
+  .hero-image-wrap { height: 100%; position: relative; overflow: hidden; background: var(--paper-warm); }
+  .hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
   .eyebrow { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem; }
   .hero h1 { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 4.2rem); line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
   .hero h1 em { font-style: italic; color: var(--green); }
   .hero-sub { font-size: 1.1rem; color: var(--ink-muted); line-height: 1.7; max-width: 520px; margin-bottom: 2.5rem; }
-  
-  /* OVERLAY CARD */
-  .floating-grammar {
-    position: absolute;
-    bottom: 40px;
-    left: -60px;
-    background: var(--green);
-    color: #fff;
-    padding: 2rem;
-    border-radius: var(--rl);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    width: 340px;
-    z-index: 10;
-  }
+  .btn-p { background: var(--green); color: #fff; padding: 0.9rem 2rem; border-radius: var(--r); font-size: 0.9rem; font-weight: 500; text-decoration: none; display: inline-block; }
+  .btn-s { background: transparent; color: var(--ink); padding: 0.9rem 2rem; border: 1px solid var(--rule-mid); border-radius: var(--r); font-size: 0.9rem; font-weight: 500; text-decoration: none; display: inline-block; margin-left: 0.5rem; }
 
-  /* METAPHOR SECTION */
-  .metaphor-band { background: var(--green-light); padding: 5rem 2.5rem; }
+  /* SHIFT SECTION */
+  .shift-grammar { background: var(--green); color: #fff; padding: 4rem 2.5rem; }
+  .shift-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; }
+  .shift-title h2 { font-family: var(--serif); font-size: 2rem; line-height: 1.2; }
+  .shift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .shift-item { padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .shift-old { font-size: 0.75rem; opacity: 0.6; text-decoration: line-through; display: block; margin-bottom: 0.25rem; }
+  .shift-new { font-size: 0.9rem; font-weight: 500; display: block; }
+
+  /* METAPHOR */
+  .metaphor-band { background: var(--green-light); padding: 5rem 2.5rem; border-bottom: 1px solid var(--green-bright); }
   .metaphor-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .metaphor-img-frame {
-    border-radius: var(--rl);
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    background: #fff;
-    padding: 10px;
-  }
+  .metaphor-img-frame { border-radius: var(--rl); overflow: hidden; background: #fff; padding: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
   .metaphor-img-frame img { width: 100%; border-radius: calc(var(--rl) - 4px); display: block; }
+  .metaphor-text h2 { font-family: var(--serif); font-size: 2.2rem; margin-bottom: 1rem; }
 
-  /* HUB GALLERY */
-  .hub-gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    padding: 1rem 2.5rem;
-    background: var(--paper-warm);
-  }
-  .hub-gallery img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: var(--r);
-    transition: transform 0.3s ease;
-  }
-  .hub-gallery img:hover { transform: scale(1.02); }
-
-  /* ORIGINAL STYLES PRESERVED */
-  .btn-p { background: var(--green); color: #fff; padding: 0.9rem 2rem; border-radius: var(--r); font-size: 0.9rem; font-weight: 500; text-decoration: none; display: inline-block; transition: all 0.2s; }
-  .btn-s { background: transparent; color: var(--ink); padding: 0.9rem 2rem; border: 1px solid var(--rule-mid); border-radius: var(--r); font-size: 0.9rem; font-weight: 500; text-decoration: none; display: inline-block; }
-  .gc-row { padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.75rem; }
-  
-  /* ... (rest of your existing styles for Model, Symmetry, and Footer) ... */
-  .model { padding: 4rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+  /* MODEL - FULL DETAILS */
+  .model { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
   .sec-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; }
   .sec-label::before { content: ''; width: 1.75rem; height: 1px; background: var(--green-mid); display: block; }
-  .bands { display: flex; flex-direction: column; gap: 1rem; }
-  .band { border-radius: var(--rl); overflow: hidden; border: 1px solid var(--rule); }
-  .band-head { padding: 0.9rem 1.25rem; display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--rule); }
-  .band-head h3 { font-size: 0.95rem; font-weight: 500; margin: 0; }
-  .band-head span { font-size: 0.78rem; color: var(--ink-faint); }
-  .band-body { padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
-  .band.k5 .band-head { background: #eaf3de; } .band.k5 .band-head h3 { color: #27500A; }
-  .band.ms .band-head { background: #e1f5ee; } .band.ms .band-head h3 { color: #085041; }
-  .band.hs .band-head { background: var(--blue-light); } .band.hs .band-head h3 { color: var(--blue); }
-  .pills { display: flex; flex-wrap: wrap; gap: 6px; }
-  .pill { background: var(--paper-card); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 4px 10px; font-size: 0.75rem; color: var(--ink); }
-  .pill.hub-pill { background: var(--green-light); border-color: var(--green-bright); color: var(--green); font-weight: 500; }
-  .row-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 4px; }
   
-  .symmetry { background: var(--ink); color: var(--paper); padding: 4rem 2.5rem; }
-  .sym-inner { max-width: 1100px; margin: 0 auto; }
-  .sym-grid { display: grid; grid-template-columns: 160px 1fr 1fr; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--rl); overflow: hidden; }
-  .sym-cell { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 0.83rem; line-height: 1.6; }
-  .sym-col-head { padding: 0.75rem 1rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .band { border-radius: var(--rl); overflow: hidden; border: 1px solid var(--rule); margin-bottom: 2rem; }
+  .band-head { padding: 1.2rem 1.5rem; display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--rule); }
+  .band-head h3 { font-size: 1.1rem; font-weight: 600; }
+  .band-head span { font-size: 0.8rem; opacity: 0.7; }
+  .band-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
   
-  .hub-strip { background: var(--amber-light); border-top: 1px solid #FAC775; border-bottom: 1px solid #FAC775; padding: 2rem 2.5rem; }
-  .hub-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
-  .btn-amber { background: var(--amber); color: #fff; padding: 0.7rem 1.5rem; border-radius: var(--r); font-size: 0.88rem; font-weight: 500; text-decoration: none; display: inline-block; }
+  .band.k5 .band-head { background: #eaf3de; color: #27500A; }
+  .band.ms .band-head { background: #e1f5ee; color: #085041; }
+  .band.hs .band-head { background: var(--blue-light); color: var(--blue); }
 
-  footer { padding: 2.5rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .row-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { background: var(--paper-card); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 6px 12px; font-size: 0.8rem; color: var(--ink); }
+  .pill.hub-pill { background: var(--green-light); border-color: var(--green-bright); color: var(--green); font-weight: 500; }
+  .pill.cte { background: var(--blue-light); border-color: #b5d4f4; color: var(--blue); }
+
+  /* GALLERY & HUB */
+  .hub-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding: 2.5rem; background: var(--paper-warm); }
+  .hub-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r); }
+  .hub-strip { background: var(--amber-light); border-top: 1px solid #FAC775; padding: 4rem 2.5rem; }
+  .hub-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+  .btn-amber { background: var(--amber); color: #fff; padding: 1rem 2rem; border-radius: var(--r); font-size: 0.9rem; font-weight: 500; text-decoration: none; }
+
+  footer { padding: 3rem 2.5rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
 
   @media (max-width: 992px) {
     .hero { grid-template-columns: 1fr; }
-    .hero-image-wrap { height: 400px; }
-    .floating-grammar { position: relative; left: 0; bottom: 0; width: 100%; border-radius: 0; }
-    .metaphor-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-image-wrap { height: 400px; order: -1; }
+    .shift-inner { grid-template-columns: 1fr; }
+    .shift-grid { grid-template-columns: 1fr; }
+    .metaphor-inner { grid-template-columns: 1fr; }
     .hub-gallery { grid-template-columns: 1fr 1fr; }
+    .hub-inner { flex-direction: column; text-align: center; }
   }
 </style>
 </head>
@@ -153,7 +110,6 @@
   <a class="nav-logo" href="index.html">Eutopia <span class="isd">ISD</span></a>
   <div class="nav-links">
     <a href="#model">Our Model</a>
-    <a href="#symmetry">Symmetry</a>
     <a href="#hub">The Hub</a>
     <a href="#explore" class="nav-cta">Get Involved</a>
   </div>
@@ -171,63 +127,86 @@
       </div>
     </div>
     <div class="hero-image-wrap">
-      <img src="student-collaboration.jpg" alt="Students working together in a modern learning environment">
-      
-      <div class="floating-grammar">
-        <p style="text-transform:uppercase; font-size:0.6rem; letter-spacing:0.1em; opacity:0.7; margin-bottom:1rem;">The Shift</p>
-        <div class="gc-row"><div style="opacity:0.5;">Old: Age-graded</div><div>New: High-agency</div></div>
-        <div class="gc-row"><div style="opacity:0.5;">Old: Siloed blocks</div><div>New: Immersive</div></div>
-        <div class="gc-row" style="border:none;"><div style="opacity:0.5;">Old: Sorting/Ranking</div><div>New: Stewardship</div></div>
-      </div>
+      <img src="student-collaboration.jpg" alt="Students working together">
+    </div>
+  </div>
+</section>
+
+<section class="shift-grammar">
+  <div class="shift-inner">
+    <div class="shift-title">
+      <p style="text-transform:uppercase; font-size:0.7rem; letter-spacing:0.2em; margin-bottom:1rem; color: var(--green-bright);">The Shift</p>
+      <h2>A New Grammar for Schooling</h2>
+    </div>
+    <div class="shift-grid">
+      <div class="shift-item"><span class="shift-old">Age-graded batches</span><span class="shift-new">High-agency apprentices</span></div>
+      <div class="shift-item"><span class="shift-old">Siloed 50-minute blocks</span><span class="shift-new">Mastery-based, immersive dives</span></div>
+      <div class="shift-item"><span class="shift-old">Sorting and ranking</span><span class="shift-new">Stewardship and collaboration</span></div>
+      <div class="shift-item"><span class="shift-old">One building, one campus</span><span class="shift-new">The community as the classroom</span></div>
     </div>
   </div>
 </section>
 
 <div class="metaphor-band">
   <div class="metaphor-inner">
-    <div class="metaphor-img-frame">
-      <img src="mountain-metaphor.jpg" alt="A student looking toward a mountain path">
-    </div>
+    <div class="metaphor-img-frame"><img src="mountain-metaphor.jpg" alt="The Journey"></div>
     <div class="metaphor-text">
       <h2>The hub, the spokes, and the mountain.</h2>
-      <p>At Eutopia ISD, the Hub is where every student and educator returns: to connect, reflect, and prepare for the next ascent. The interest cohorts are the spokes — distinct paths, one shared center. The mountain is always in front of you. That's the point.</p>
+      <p>At Eutopia ISD, the Hub is where every student and educator returns: to connect, reflect, and prepare for the next ascent. The interest cohorts are the spokes — distinct paths, one shared center.</p>
     </div>
   </div>
 </div>
 
 <section class="model" id="model">
   <p class="sec-label">The model — K through 12</p>
-  <div class="bands">
-    <div class="band k5">
-      <div class="band-head"><h3>Elementary — K–5</h3><span>Discovery &amp; Foundations</span></div>
-      <div class="band-body">
-          <div class="pills">
-            <div class="pill">Core literacy</div><div class="pill">Interest discovery</div><div class="pill">Community as classroom</div>
-          </div>
+  
+  <div class="band k5">
+    <div class="band-head"><h3>Elementary — K–5</h3><span>Discovery & Foundations</span></div>
+    <div class="band-body">
+      <div class="row-label">Focus areas</div>
+      <div class="pills">
+        <div class="pill">Core literacy & numeracy</div><div class="pill">Interest discovery</div><div class="pill">Productive struggle</div><div class="pill">Community as classroom</div><div class="pill">Portfolio begins</div><div class="pill">Flexible scheduling</div>
       </div>
     </div>
-    <div class="band ms">
-      <div class="band-head"><h3>Middle School — 6–8</h3><span>Interest cohorts activate</span></div>
-      <div class="band-body">
-          <div class="pills">
-            <div class="pill">Technology</div><div class="pill">Basketball</div><div class="pill">The Arts</div><div class="pill">Engineering</div>
-          </div>
+  </div>
+
+  <div class="band ms">
+    <div class="band-head"><h3>Middle School — 6–8</h3><span>Interest cohorts activate</span></div>
+    <div class="band-body">
+      <div class="row-label">Interest cohorts</div>
+      <div class="pills">
+        <div class="pill">Technology</div><div class="pill">Basketball</div><div class="pill">Soccer</div><div class="pill">The Arts</div><div class="pill">Classical Liberal Arts</div><div class="pill">Health & Medicine</div><div class="pill">Agriculture</div><div class="pill">Engineering</div>
+      </div>
+      <div class="row-label">Daily Hub — Midday Gathering</div>
+      <div class="pills">
+        <div class="pill hub-pill">Durable skills</div><div class="pill hub-pill">Cross-cohort mentorship</div><div class="pill hub-pill">Mastery Transcript</div><div class="pill hub-pill">Portrait of a Learner</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band hs">
+    <div class="band-head"><h3>High School — 9–12</h3><span>CTE & Apprenticeship</span></div>
+    <div class="band-body">
+      <div class="row-label">CTE pathways (Dual Credit)</div>
+      <div class="pills">
+        <div class="pill cte">Information Technology</div><div class="pill cte">Exercise Science</div><div class="pill cte">Arts & Media</div><div class="pill cte">Health & Medicine</div><div class="pill cte">Agriculture</div><div class="pill cte">Advanced Manufacturing</div>
+      </div>
+      <div class="row-label">Work-based learning</div>
+      <div class="pills">
+        <div class="pill">Grades 9–10: Pre-apprenticeship</div><div class="pill">Grades 11–12: Apprenticeship</div><div class="pill">Community partnerships</div><div class="pill">Career & College Pathways</div>
       </div>
     </div>
   </div>
 </section>
 
 <div class="hub-gallery">
-  <img src="hub-1.jpg" alt="Student in health clinic">
-  <img src="hub-2.jpg" alt="Coffee shop enterprise">
-  <img src="hub-3.jpg" alt="Manufacturing studio">
-  <img src="hub-4.jpg" alt="Agriculture garden">
+  <img src="hub-1.jpg" alt="Health"><img src="hub-2.jpg" alt="Coffee"><img src="hub-3.jpg" alt="Manufacturing"><img src="hub-4.jpg" alt="Agriculture">
 </div>
 
 <div class="hub-strip" id="hub">
   <div class="hub-inner">
     <div>
-      <h3>The Hub — where Eutopia learns together.</h3>
+      <h3 style="font-family: var(--serif); font-size: 1.8rem; margin-bottom: 0.5rem;">The Hub — where Eutopia learns together.</h3>
       <p>Our community enterprise center connects student work to real economic and civic life.</p>
     </div>
     <a class="btn-amber" href="#hub">Visit The Hub →</a>
@@ -235,7 +214,7 @@
 </div>
 
 <footer>
-  <span class="logo">Eutopia ISD</span>
+  <span class="logo" style="font-family: var(--serif); font-weight: bold;">Eutopia ISD</span>
   <p>© 2026 Eutopia · A New Grammar for Schooling</p>
 </footer>
 
