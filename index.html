@@ -63,31 +63,34 @@
   .mastery-step h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--green-mid); text-transform: uppercase; letter-spacing: 0.05em; }
   .mastery-step p { font-size: 0.95rem; color: var(--ink-muted); }
 
-  /* PARTNERSHIPS SECTION */
+  /* MODEL SECTION REDESIGN (With hub-3) */
+  .model-wrapper { padding: 5rem 2.5rem; border-bottom: 1px solid var(--rule); }
+  .model-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
+  .model-visual { border-radius: var(--rl); overflow: hidden; position: sticky; top: 120px; }
+  .model-visual img { width: 100%; border: 10px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+  .sec-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; }
+  .sec-label::before { content: ''; width: 1.75rem; height: 1px; background: var(--green-mid); display: block; }
+  
+  .band { border-radius: var(--rl); overflow: hidden; border: 1px solid var(--rule); margin-bottom: 2rem; background: #fff; }
+  .band-head { padding: 1.2rem 1.5rem; display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--rule); }
+  .band-head h3 { font-size: 1.1rem; font-weight: 600; }
+  .band-head span { font-size: 0.8rem; opacity: 0.7; }
+  .band-body { padding: 1.5rem; }
+  .row-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; margin-top: 15px; }
+  .row-label:first-child { margin-top: 0; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { background: var(--paper-warm); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 6px 12px; font-size: 0.8rem; color: var(--ink); }
+  .pill.hub-pill { background: var(--green-light); border-color: var(--green-bright); color: var(--green); font-weight: 500; }
+  .pill.cte { background: var(--blue-light); border-color: #b5d4f4; color: var(--blue); }
+  .pill.railway { background: var(--amber-light); border-color: #FAC775; color: var(--amber); font-weight: 600; }
+
+  /* PARTNERSHIPS SECTION (Original partners still here) */
   .partners-section { background: var(--paper-warm); padding: 5rem 2.5rem; border-bottom: 1px solid var(--rule); }
   .partners-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: start; }
   .partner-track { background: #fff; padding: 2rem; border-radius: var(--rl); margin-bottom: 1.5rem; border: 1px solid var(--rule); }
   .partner-track h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--blue); margin-bottom: 1rem; border-bottom: 2px solid var(--blue-light); padding-bottom: 0.5rem; }
   .path-row { display: grid; grid-template-columns: 100px 1fr; gap: 1rem; margin-bottom: 0.75rem; font-size: 0.85rem; }
   .path-label { font-weight: 700; color: var(--ink-faint); text-transform: uppercase; font-size: 0.65rem; padding-top: 3px; }
-  .partner-img { border-radius: var(--rl); overflow: hidden; position: sticky; top: 120px; }
-  .partner-img img { width: 100%; border: 10px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-
-  /* MODEL SECTION */
-  .model { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-  .sec-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.6rem; }
-  .sec-label::before { content: ''; width: 1.75rem; height: 1px; background: var(--green-mid); display: block; }
-  .band { border-radius: var(--rl); overflow: hidden; border: 1px solid var(--rule); margin-bottom: 2rem; }
-  .band-head { padding: 1.2rem 1.5rem; display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--rule); }
-  .band.k5 .band-head { background: #eaf3de; color: #27500A; }
-  .band.ms .band-head { background: #e1f5ee; color: #085041; }
-  .band.hs .band-head { background: var(--blue-light); color: var(--blue); }
-  .band-body { padding: 1.5rem; }
-  .row-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; margin-top: 15px; }
-  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .pill { background: var(--paper-card); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 6px 12px; font-size: 0.8rem; color: var(--ink); }
-  .pill.hub-pill { background: var(--green-light); border-color: var(--green-bright); color: var(--green); font-weight: 500; }
-  .pill.cte { background: var(--blue-light); border-color: #b5d4f4; color: var(--blue); }
 
   /* SCHEDULE SECTION */
   .schedule-section { padding: 5rem 2.5rem; background: #fff; }
@@ -101,8 +104,8 @@
   footer { padding: 3rem 2.5rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
 
   @media (max-width: 992px) {
-    .hero, .mastery-inner, .partners-inner, .schedule-inner, .shift-inner { grid-template-columns: 1fr; }
-    .hero-image-wrap, .partner-img, .schedule-img { height: 350px; order: -1; position: static; }
+    .hero, .mastery-inner, .partners-inner, .schedule-inner, .shift-inner, .model-inner { grid-template-columns: 1fr; }
+    .hero-image-wrap, .model-visual, .schedule-img { height: 350px; order: -1; position: static; }
   }
 </style>
 </head>
@@ -163,13 +166,64 @@
   </div>
 </section>
 
+<section class="model-wrapper" id="model">
+  <div class="model-inner">
+    <div class="model-details">
+      <p class="sec-label">The model — K through 12</p>
+      
+      <div class="band k5">
+        <div class="band-head"><h3>Elementary — K–5</h3><span>Discovery & Foundations</span></div>
+        <div class="band-body">
+          <div class="row-label">Focus areas</div>
+          <div class="pills">
+            <div class="pill">Core literacy & numeracy</div><div class="pill">Interest discovery</div><div class="pill">Productive struggle</div><div class="pill">Community as classroom</div><div class="pill">Portfolio begins</div><div class="pill">Flexible scheduling</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="band ms">
+        <div class="band-head"><h3>Middle School — 6–8</h3><span>Interest Cohorts & Mastery</span></div>
+        <div class="band-body">
+          <div class="row-label">Interest cohorts</div>
+          <div class="pills">
+            <div class="pill">Technology</div><div class="pill">Basketball</div><div class="pill">Soccer</div><div class="pill">The Arts</div><div class="pill">Classical Liberal Arts</div><div class="pill">Health & Medicine</div><div class="pill">Agriculture</div><div class="pill">Engineering</div>
+          </div>
+          <div class="row-label">Daily Hub — midday gathering</div>
+          <div class="pills">
+            <div class="pill hub-pill">Durable skills</div><div class="pill hub-pill">Mentorship</div><div class="pill hub-pill">Mastery Transcript</div><div class="pill hub-pill">Portrait of a Learner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="band hs">
+        <div class="band-head"><h3>High School — 9–12</h3><span>CTE & Apprenticeship</span></div>
+        <div class="band-body">
+          <div class="row-label">CTE pathways (dual credit)</div>
+          <div class="pills">
+            <div class="pill cte">Information Technology</div><div class="pill cte">Exercise Science</div><div class="pill cte">Arts & Media</div><div class="pill cte">Health & Medicine</div><div class="pill cte">Agriculture</div><div class="pill cte">Advanced Manufacturing</div>
+            <div class="pill railway">Locomotive Mech (BNSF/UP)</div><div class="pill railway">Power Plant Tech (Luminant)</div>
+          </div>
+          <div class="row-label">Work-based learning progression</div>
+          <div class="pills">
+            <div class="pill">Grades 9–10: pre-apprenticeship</div><div class="pill">Grades 11–12: apprenticeship</div><div class="pill railway">Railroad Operations</div><div class="pill railway">Business Finance (Encore)</div><div class="pill">Permeable pathways</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="model-visual">
+      <img src="hub-3.jpg" alt="Collaborative Learning at the Hub">
+      <p style="font-size: 0.75rem; color: var(--ink-faint); margin-top: 1rem; padding: 0 1rem; text-align: center;">Granular focus: Pathways designed for local Lake Worth relevance.</p>
+    </div>
+  </div>
+</section>
+
 <section class="partners-section" id="partners">
   <div class="partners-inner">
     <div class="partners-list">
       <p class="sec-label" style="color:var(--blue);">The Railroad & Energy Pipeline</p>
-      <h2 style="font-family: var(--serif); font-size: 2.2rem; margin-bottom: 1.5rem;">$50k to Six Figures</h2>
-      <p style="margin-bottom: 2rem; color: var(--ink-muted);">Lake Worth is uniquely positioned near major rail and energy hubs. We "pull" these careers into early grades to change the narrative on trade-based success.</p>
-
+      <h2 style="font-family: var(--serif); font-size: 2.2rem; margin-bottom: 1.5rem;">Local Industry Synergy</h2>
+      
       <div class="partner-track">
         <h3>BNSF / Union Pacific</h3>
         <div class="path-row"><div class="path-label">Elementary</div><div>Physics of Motion: Junior Conductor kits; field trips to Davidson Yard.</div></div>
@@ -183,60 +237,8 @@
         <div class="path-row"><div class="path-label">Middle</div><div>Grid Guardians: Coding and hardware for managing local power grids.</div></div>
         <div class="path-row"><div class="path-label">High School</div><div>Power Plant Tech: Direct certification in Electrical or Instrumentation.</div></div>
       </div>
-
-      <div class="partner-track">
-        <h3>Encore</h3>
-        <div class="path-row"><div class="path-label">Elementary</div><div>Business Basics: Student-run "mini-ventures" supported by Encore staff.</div></div>
-        <div class="path-row"><div class="path-label">Middle</div><div>Real Estate/Capital: Lessons in property value and investments.</div></div>
-        <div class="path-row"><div class="path-label">High School</div><div>Business Finance: Internships in portfolio management or construction.</div></div>
-      </div>
     </div>
     <div class="partner-img"><img src="hub-2.jpg" alt="Energy and Rail Partnerships"></div>
-  </div>
-</section>
-
-<section class="model" id="model">
-  <p class="sec-label">The model — K through 12</p>
-  <div class="band k5">
-    <div class="band-head"><h3>Elementary — K–5</h3><span>Discovery & Foundations</span></div>
-    <div class="band-body">
-      <div class="row-label">Focus areas</div>
-      <div class="pills">
-        <div class="pill">Core literacy & numeracy</div><div class="pill">Interest discovery</div><div class="pill">Productive struggle</div><div class="pill">Community as classroom</div><div class="pill">Portfolio begins</div><div class="pill">Flexible scheduling</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="band ms">
-    <div class="band-head"><h3>Middle School — 6–8</h3><span>Interest Cohorts & Mastery</span></div>
-    <div class="band-body">
-      <div class="row-label">Interest cohorts</div>
-      <div class="pills">
-        <div class="pill">Technology</div><div class="pill">Basketball</div><div class="pill">Soccer</div><div class="pill">The Arts</div><div class="pill">Classical Liberal Arts</div><div class="pill">Health & Medicine</div><div class="pill">Agriculture</div><div class="pill">Engineering</div>
-      </div>
-      <div class="row-label">Arts cohort — documentary strand</div>
-      <div class="pills">
-        <div class="pill">Longform storytelling</div><div class="pill">Video & media production</div><div class="pill">Student work interviews</div><div class="pill">Living school documentary</div>
-      </div>
-      <div class="row-label">Daily Hub — midday gathering</div>
-      <div class="pills">
-        <div class="pill hub-pill">Durable skills</div><div class="pill hub-pill">Mentorship</div><div class="pill hub-pill">Mastery Transcript</div><div class="pill hub-pill">Portrait of a Learner</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="band hs">
-    <div class="band-head"><h3>High School — 9–12</h3><span>CTE & Apprenticeship</span></div>
-    <div class="band-body">
-      <div class="row-label">CTE pathways (dual credit)</div>
-      <div class="pills">
-        <div class="pill cte">Information Technology</div><div class="pill cte">Exercise Science</div><div class="pill cte">Arts & Media</div><div class="pill cte">Health & Medicine</div><div class="pill cte">Agriculture</div><div class="pill cte">Advanced Manufacturing</div>
-      </div>
-      <div class="row-label">Work-based learning progression</div>
-      <div class="pills">
-        <div class="pill">Grades 9–10: pre-apprenticeship</div><div class="pill">Grades 11–12: apprenticeship</div><div class="pill">Community & industry partnerships</div><div class="pill">Permeable pathways</div>
-      </div>
-    </div>
   </div>
 </section>
 
