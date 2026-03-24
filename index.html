@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eutopia ISD — A New Grammar for Schooling</title>
+<title>The Hub at Eutopia ISD — A New Grammar for Schooling</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,11 +24,14 @@
   /* NAV */
   nav {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.1rem 2.5rem; border-bottom: 1px solid var(--rule);
+    padding: 0.8rem 2.5rem; border-bottom: 1px solid var(--rule);
     background: var(--paper); position: sticky; top: 0; z-index: 100;
   }
-  .nav-logo { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); text-decoration: none; display: flex; align-items: baseline; gap: 0.4rem; }
-  .nav-logo .isd { font-family: var(--sans); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-mid); }
+  .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--ink); }
+  .nav-logo img { height: 40px; width: auto; border-radius: 2px; }
+  .nav-logo-text { font-family: var(--serif); font-size: 1.1rem; display: flex; align-items: baseline; gap: 0.3rem; }
+  .nav-logo-text .isd { font-family: var(--sans); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-mid); }
+  
   .nav-links { display: flex; align-items: center; gap: 1.75rem; }
   .nav-links a { font-size: 0.83rem; font-weight: 500; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
   .nav-cta { background: var(--green); color: #fff !important; padding: 0.5rem 1.1rem; border-radius: var(--r); font-size: 0.83rem; font-weight: 500; text-decoration: none; }
@@ -63,7 +66,7 @@
   .mastery-step h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--green-mid); text-transform: uppercase; letter-spacing: 0.05em; }
   .mastery-step p { font-size: 0.95rem; color: var(--ink-muted); }
 
-  /* MODEL SECTION REDESIGN (With hub-3) */
+  /* MODEL SECTION */
   .model-wrapper { padding: 5rem 2.5rem; border-bottom: 1px solid var(--rule); }
   .model-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
   .model-visual { border-radius: var(--rl); overflow: hidden; position: sticky; top: 120px; }
@@ -77,14 +80,13 @@
   .band-head span { font-size: 0.8rem; opacity: 0.7; }
   .band-body { padding: 1.5rem; }
   .row-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; margin-top: 15px; }
-  .row-label:first-child { margin-top: 0; }
   .pills { display: flex; flex-wrap: wrap; gap: 8px; }
   .pill { background: var(--paper-warm); border: 1px solid var(--rule-mid); border-radius: var(--r); padding: 6px 12px; font-size: 0.8rem; color: var(--ink); }
   .pill.hub-pill { background: var(--green-light); border-color: var(--green-bright); color: var(--green); font-weight: 500; }
   .pill.cte { background: var(--blue-light); border-color: #b5d4f4; color: var(--blue); }
   .pill.railway { background: var(--amber-light); border-color: #FAC775; color: var(--amber); font-weight: 600; }
 
-  /* PARTNERSHIPS SECTION (Original partners still here) */
+  /* PARTNERSHIPS */
   .partners-section { background: var(--paper-warm); padding: 5rem 2.5rem; border-bottom: 1px solid var(--rule); }
   .partners-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: start; }
   .partner-track { background: #fff; padding: 2rem; border-radius: var(--rl); margin-bottom: 1.5rem; border: 1px solid var(--rule); }
@@ -92,7 +94,7 @@
   .path-row { display: grid; grid-template-columns: 100px 1fr; gap: 1rem; margin-bottom: 0.75rem; font-size: 0.85rem; }
   .path-label { font-weight: 700; color: var(--ink-faint); text-transform: uppercase; font-size: 0.65rem; padding-top: 3px; }
 
-  /* SCHEDULE SECTION */
+  /* SCHEDULE */
   .schedule-section { padding: 5rem 2.5rem; background: #fff; }
   .schedule-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
   .schedule-img { border-radius: var(--rl); overflow: hidden; }
@@ -102,6 +104,8 @@
   td { padding: 1rem; border-bottom: 1px solid var(--rule); }
 
   footer { padding: 3rem 2.5rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .footer-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--ink); font-family: var(--serif); font-weight: bold; }
+  .footer-logo img { height: 30px; }
 
   @media (max-width: 992px) {
     .hero, .mastery-inner, .partners-inner, .schedule-inner, .shift-inner, .model-inner { grid-template-columns: 1fr; }
@@ -112,7 +116,10 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">Eutopia <span class="isd">ISD</span></a>
+  <a class="nav-logo" href="index.html">
+    <img src="logo.jpg" alt="The Hub Logo">
+    <div class="nav-logo-text">The Hub <span class="isd">at Eutopia ISD</span></div>
+  </a>
   <div class="nav-links">
     <a href="#model">Our Model</a>
     <a href="#mastery">Mastery</a>
@@ -125,9 +132,9 @@
 <section class="hero-container">
   <div class="hero">
     <div class="hero-content">
-      <p class="eyebrow">Eutopia &nbsp;·&nbsp; A New Grammar for Schooling</p>
+      <p class="eyebrow">The Hub at Eutopia ISD &nbsp;·&nbsp; A New Grammar for Schooling</p>
       <h1>Education built around who students <em>actually are.</em></h1>
-      <p class="hero-sub">Dismantling the industrial model to build a mastery-based, community-rooted ecosystem where every learner is deeply known and trusted to grow.</p>
+      <p class="hero-sub">Dismantling the industrial model at The Hub at Eutopia ISD to build a mastery-based, community-rooted ecosystem where every learner is deeply known and trusted to grow.</p>
     </div>
     <div class="hero-image-wrap"><img src="student-collaboration.jpg" alt="Students"></div>
   </div>
@@ -152,7 +159,7 @@
       <h2>Mastery of Progress: Cornerstones & Capstones</h2>
       <div class="mastery-step">
         <h4>Time-Variable Progression</h4>
-        <p>Advancement is untethered from age. Students move forward purely by demonstrating competency in PBL stacks aligned with Interest Cohorts.</p>
+        <p>Advancement at The Hub at Eutopia ISD is untethered from age. Students move forward purely by demonstrating competency in PBL stacks aligned with Interest Cohorts.</p>
       </div>
       <div class="mastery-step">
         <h4>Annual Cornerstone Projects</h4>
@@ -213,7 +220,7 @@
     
     <div class="model-visual">
       <img src="hub-3.jpg" alt="Collaborative Learning at the Hub">
-      <p style="font-size: 0.75rem; color: var(--ink-faint); margin-top: 1rem; padding: 0 1rem; text-align: center;">Granular focus: Pathways designed for local Lake Worth relevance.</p>
+      <p style="font-size: 0.75rem; color: var(--ink-faint); margin-top: 1rem; padding: 0 1rem; text-align: center;">Granular focus: Pathways designed for local Lake Worth relevance at The Hub at Eutopia ISD.</p>
     </div>
   </div>
 </section>
@@ -262,8 +269,11 @@
 </section>
 
 <footer>
-  <span class="logo">Eutopia ISD</span>
-  <p>© 2026 Eutopia · A New Grammar for Schooling</p>
+  <a href="index.html" class="footer-logo">
+    <img src="logo.jpg" alt="The Hub Logo">
+    <span>The Hub at Eutopia ISD</span>
+  </a>
+  <p>© 2026 The Hub at Eutopia ISD · A New Grammar for Schooling</p>
 </footer>
 
 </body>
